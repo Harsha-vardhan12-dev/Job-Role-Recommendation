@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>CareerMatch AI</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<div class="page">
+
+    <div class="hero">
+
+        <div class="badge">
+            🚀 AI Career Assistant
+        </div>
+
+        <h1>
+            Find Your Perfect
+            <span>Job Role</span>
+        </h1>
+
+        <p>
+            Select your technical skills and discover
+            the career roles that match your profile.
+        </p>
+
+    </div>
+
+
+    <div class="skill-card">
+
+        <h2>🎯 Select Your Skills</h2>
+
+        <p class="instruction">
+            Choose all the skills you currently know.
+        </p>
+
+
+        <form action="/recommend" method="POST">
+
+            <div class="skills-grid">
+
+                <label class="skill">
+                    <input type="checkbox"
+                           name="skills"
+                           value="Python">
+                    <span>🐍 Python</span>
+                </label>
+
+                <label class="skill">
+                    <input type="checkbox"
+                           name="skills"
+                           value="SQL">
+                    <span>🗃️ SQL</span>
+                </label>
+
+                <label class="skill">
+                    <input type="checkbox"
+                           name="skills"
+                           value="Excel">
+                    <span>📗 Excel</span>
+                </label>
+
+                <label class="skill">
+                    <input type="checkbox"
+                           name="skills"
+                           value="Power BI">
+                    <span>📊 Power BI</span>
+                </label>
+
+                <label class="skill">
+                    <input type="checkbox"
+                           name="skills"
+                           value="Statistics">
+                    <span>📈 Statistics</span>
+                </label>
+
+                <label class="skill">
+                    <input type="checkbox"
+                           name="skills"
+                           value="HTML">
+                    <span>🌐 HTML</span>
+                </label>
+
+                <label class="skill">
+                    <input type="checkbox"
+                           name="skills"
+                           value="CSS">
+                    <span>🎨 CSS</span>
+                </label>
+
+                <label class="skill">
+                    <input type="checkbox"
+                           name="skills"
+                           value="JavaScript">
+                    <span>⚡ JavaScript</span>
+                </label>
+
+                <label class="skill">
+                    <input type="checkbox"
+                           name="skills"
+                           value="Git">
+                    <span>🔧 Git</span>
+                </label>
+
+                <label class="skill">
+                    <input type="checkbox"
+                           name="skills"
+                           value="OOP">
+                    <span>🧩 OOP</span>
+                </label>
+
+                <label class="skill">
+                    <input type="checkbox"
+                           name="skills"
+                           value="Java">
+                    <span>☕ Java</span>
+                </label>
+
+                <label class="skill">
+                    <input type="checkbox"
+                           name="skills"
+                           value="Problem Solving">
+                    <span>🧠 Problem Solving</span>
+                </label>
+
+                <label class="skill">
+                    <input type="checkbox"
+                           name="skills"
+                           value="Networking">
+                    <span>🌍 Networking</span>
+                </label>
+
+                <label class="skill">
+                    <input type="checkbox"
+                           name="skills"
+                           value="Linux">
+                    <span>🐧 Linux</span>
+                </label>
+
+                <label class="skill">
+                    <input type="checkbox"
+                           name="skills"
+                           value="Cybersecurity">
+                    <span>🛡️ Cybersecurity</span>
+                </label>
+
+                <label class="skill">
+                    <input type="checkbox"
+                           name="skills"
+                           value="MySQL">
+                    <span>🗄️ MySQL</span>
+                </label>
+
+                <label class="skill">
+                    <input type="checkbox"
+                           name="skills"
+                           value="Database">
+                    <span>💾 Database</span>
+                </label>
+
+            </div>
+
+
+            <button type="submit" class="recommend-btn">
+
+                🔍 Find My Job Roles
+
+            </button>
+
+        </form>
+
+    </div>
+
+
+    <footer>
+
+        <p>
+            💡 CareerMatch AI • BCA Student Project
+        </p>
+
+    </footer>
+
+</div>
+
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Career Recommendations</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<div class="page">
+
+    <div class="result-header">
+
+        <div class="badge">
+            🎯 Career Analysis Complete
+        </div>
+
+        <h1>
+            Your Recommended
+            <span>Job Roles</span>
+        </h1>
+
+        <p>
+            Based on the skills you selected,
+            here are your best career matches.
+        </p>
+
+    </div>
+
+
+    <div class="selected-box">
+
+        <h3>✨ Your Skills</h3>
+
+        <div class="selected-skills">
+
+            {% for skill in selected_skills %}
+
+                <span>{{ skill }}</span>
+
+            {% endfor %}
+
+        </div>
+
+    </div>
+
+
+    <div class="jobs">
+
+        {% for item in recommendations %}
+
+        <div class="job-card">
+
+            <div class="job-top">
+
+                <div class="job-icon">
+                    {{ item.icon }}
+                </div>
+
+                <div>
+
+                    <h2>
+                        {{ item.role }}
+                    </h2>
+
+                    <p>
+                        {{ item.description }}
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="match-area">
+
+                <div class="match-text">
+
+                    <span>Skill Match</span>
+
+                    <strong>
+                        {{ item.percentage }}%
+                    </strong>
+
+                </div>
+
+                <div class="progress">
+
+                    <div class="progress-bar"
+                         style="width: {{ item.percentage }}%">
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="skills-section">
+
+                <h4>
+                    ✅ Matching Skills
+                </h4>
+
+                <div class="tags">
+
+                    {% if item.matching_skills %}
+
+                        {% for skill in item.matching_skills %}
+
+                            <span class="match-tag">
+                                {{ skill }}
+                            </span>
+
+                        {% endfor %}
+
+                    {% else %}
+
+                        <span class="no-skill">
+                            No matching skills
+                        </span>
+
+                    {% endif %}
+
+                </div>
+
+            </div>
+
+
+            <div class="skills-section">
+
+                <h4>
+                    📚 Skills to Learn
+                </h4>
+
+                <div class="tags">
+
+                    {% if item.missing_skills %}
+
+                        {% for skill in item.missing_skills %}
+
+                            <span class="learn-tag">
+                                {{ skill }}
+                            </span>
+
+                        {% endfor %}
+
+                    {% else %}
+
+                        <span class="perfect">
+                            🎉 You have all required skills!
+                        </span>
+
+                    {% endif %}
+
+                </div>
+
+            </div>
+
+        </div>
+
+        {% endfor %}
+
+    </div>
+
+
+    <a href="/" class="back-btn">
+        ← Check Again
+    </a>
+
+
+    <footer>
+
+        <p>
+            💡 CareerMatch AI • BCA Student Project
+        </p>
+
+    </footer>
+
+</div>
+
+</body>
+
+</html>
